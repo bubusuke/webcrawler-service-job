@@ -42,7 +42,7 @@ def folio_theme_crawler(driver, url):
   seq = 0
   themes = list()
   for theme in theme_list.find_elements_by_css_selector('a.gtm-theme-detail'):
-    theme_id = theme.get_attribute('href').replace(url,'')
+    theme_id = theme.get_attribute('href').replace(url+'/','')
     title = theme.find_element_by_css_selector('h1').text
     themes.append({'theme_id': theme_id, 'title': title, 'seq': seq})
     seq += 1
