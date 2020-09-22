@@ -11,7 +11,7 @@ We are analyzing the following two types of sites.
 * How: Analyzing dynamic site.
 * What: Using headless Chrome and selenium. [ChromeDriver File](https://chromedriver.chromium.org/downloads) is also required.
 
-#### 2. stocks per theme ( https://folio-sec.com/theme/${theme} )
+#### 2. stocks per theme ( `https://folio-sec.com/theme/${theme}` ex. https://folio-sec.com/theme/consumption-tax-increase )
 * Why: Creating stocks-list per theme.
 * How: Analyzing static site.
 * What: Using beautifulsoup.
