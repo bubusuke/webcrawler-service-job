@@ -4,12 +4,13 @@
 import folio_themes
 import folio_theme_details
 import database
+import os
 
 def main():
-  theme_url = 'https://folio-sec.com/theme'
+  theme_url = os.environ.get('URL_FOLIO','https://folio-sec.com/theme')
 
   #crawler
-  print('Start to crawle.')
+  print('Start to crawl.')
   themes = folio_themes.crawl(theme_url)
   theme_details = list()
   for theme in themes:

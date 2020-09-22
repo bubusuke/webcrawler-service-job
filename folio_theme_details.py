@@ -30,4 +30,4 @@ def save(pg, theme_details):
 
 
 if __name__ == "__main__":
-  print(crawl('https://folio-sec.com/theme', 'pay'))
+  print(crawl(os.environ.get('URL_FOLIO','https://folio-sec.com/theme'), 'pay'))

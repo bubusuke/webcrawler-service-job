@@ -18,4 +18,11 @@ WORKDIR /opt/app
 COPY . .
 RUN pip install -r requirements.lock
 
-ENTRYPOINT [ "python","./folio_themes.py" ]
+ENV URL_FOLIO=https://folio-sec.com/theme
+ENV DB_HOST=localhost
+ENV DB_PORT=5432
+ENV DB_DATABASE_NAME=postgres
+ENV DB_USER=postgres
+ENV DB_PASSWORD=pass
+
+ENTRYPOINT [ "sh","./run.sh" ]
