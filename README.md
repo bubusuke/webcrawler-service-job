@@ -9,7 +9,7 @@ See [README of webcrawler-service](https://github.com/bubusuke/webcrawler-servic
 * Execute [DDL](https://github.com/bubusuke/webcrawler-service/tree/master/initdb.d). 
 
 ### 2. Exec
-```
+```sh
 # Only Folio's Themes.
 # In this case, database is not necessary.
 # The result is desplay on STDOUT.
