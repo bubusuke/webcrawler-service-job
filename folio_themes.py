@@ -12,6 +12,8 @@ import database
 def crawl(url):
   options = ChromeOptions()
   options.add_argument('--headless')
+  options.add_argument('--no-sandbox')
+  options.add_argument('--disable-dev-shm-usage')
   driver = Chrome(options=options)
 
   print('Start to crawl. url:' + url)
@@ -54,4 +56,4 @@ def save(pg, themes):
      {'theme_id': theme['theme_id'], 'title': theme['title'], 'seq': theme['seq']})
 
 if __name__ == "__main__":
-  crawl('https://folio-sec.com/theme')
+  print(crawl('https://folio-sec.com/theme'))
