@@ -3,6 +3,8 @@
 
 import psycopg2
 import os
+
+# postgres managed database connection.
 class postgres: 
     def connection(self):
         host = os.environ.get('DB_HOST','localhost')

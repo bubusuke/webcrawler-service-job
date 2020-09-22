@@ -1,7 +1,8 @@
 #! /bin/bash
 
-interval_sec=${JOB_INTERVAL_SEC:-"60"}
+# "run.sh" runs main.py intervally.
 
+interval_sec=${JOB_INTERVAL_SEC:-"60"}
 
 while [ true ]
 do

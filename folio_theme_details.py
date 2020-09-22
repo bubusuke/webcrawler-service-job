@@ -4,6 +4,7 @@
 import requests
 from bs4 import BeautifulSoup
 
+# "crawl" is analyzed using BeautifulSoup because the target site needed to be analyzed as a static site, 
 def crawl(url, target_theme):
 
   theme_id = target_theme['theme_id']
@@ -22,12 +23,14 @@ def crawl(url, target_theme):
 
   return theme_details
 
+# "save" stores theme_details.
+# Old data is not needed, so DELETE-INSERT the data.
 def save(pg, theme_details): 
   pg.cur.execute("DELETE FROM theme_details")
   for theme_detail in theme_details:
     pg.cur.execute("INSERT INTO theme_details (theme_id, detail_id, title) VALUES ( %(theme_id)s, %(detail_id)s, %(title)s )",
      {'theme_id': theme_detail['theme_id'], 'detail_id': theme_detail['detail_id'], 'title': theme_detail['title']})
 
-
+# For test.
 if __name__ == "__main__":
   print(crawl(os.environ.get('URL_FOLIO','https://folio-sec.com/theme'), 'pay'))

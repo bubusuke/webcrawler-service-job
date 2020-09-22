@@ -16,6 +16,8 @@ RUN \
 
 WORKDIR /opt/app
 COPY . .
+
+# python libraries install
 RUN pip install -r requirements.lock
 
 ENV URL_FOLIO=https://folio-sec.com/theme
